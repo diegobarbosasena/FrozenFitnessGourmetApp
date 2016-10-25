@@ -19,17 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pendente_Cliente"
+            android:name=".TabActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.frozenfitnessgourmet.app.MainActivity" />
         </activity>
-        <activity
-            android:name=".CenterActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

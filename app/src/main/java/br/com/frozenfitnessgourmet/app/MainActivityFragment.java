@@ -30,7 +30,7 @@ public class MainActivityFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CenterActivity.class);
+                Intent intent = new Intent(getActivity(), TabActivity.class);
 
                 startActivity(intent);
             }
