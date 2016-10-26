@@ -1,35 +1,44 @@
 package br.com.frozenfitnessgourmet.app;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.widget.TabHost;
 
 /**
  * Created by 15160046 on 25/10/2016.
  */
 
-public class TabActivity extends ActionBarActivity {
+public class TabActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
-    private ActionBar actionBar;
+    private TabHost tabHost;
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_tab);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        tabHost = (TabHost) findViewById(R.id.tabHost);
+        tabHost.setup();
 
-        FragmentManager fm = getSupportFragmentManager();
-        TabPagerAdapter pagerAdapter = new TabPagerAdapter(fm);
-        viewPager.setAdapter(pagerAdapter);
+        TabHost.TabSpec spec = tabHost.newTabSpec("Pendente");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Pendente");
+        tabHost.addTab(spec);
 
+        TabHost.TabSpec spec1  = tabHost.newTabSpec("Histórico");
+        spec1.setContent(R.id.tab2);
+        spec1.setIndicator("Histórico");
+        tabHost.addTab(spec1);
 
+        TabHost.TabSpec spec2  = tabHost.newTabSpec("Outro");
+        spec2.setContent(R.id.tab3);
+        spec2.setIndicator("Outro");
+        tabHost.addTab(spec2);
 
+        tabHost.setOnTabChangedListener(new AnimatedTabHostListener(this, tabHost));
     }
 }
