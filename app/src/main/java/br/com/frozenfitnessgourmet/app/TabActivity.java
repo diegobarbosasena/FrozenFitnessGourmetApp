@@ -1,9 +1,15 @@
 package br.com.frozenfitnessgourmet.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TabHost;
+
+import static android.R.id.tabcontent;
+import static java.security.AccessController.getContext;
 
 /**
  * Created by 15160046 on 25/10/2016.
@@ -12,6 +18,7 @@ import android.widget.TabHost;
 public class TabActivity extends AppCompatActivity {
 
     private TabHost tabHost;
+    private FrameLayout frameLayout;
 
 
     @Override
@@ -34,11 +41,12 @@ public class TabActivity extends AppCompatActivity {
         spec1.setIndicator("Histórico");
         tabHost.addTab(spec1);
 
-        TabHost.TabSpec spec2  = tabHost.newTabSpec("Outro");
-        spec2.setContent(R.id.tab3);
-        spec2.setIndicator("Outro");
-        tabHost.addTab(spec2);
-
         tabHost.setOnTabChangedListener(new AnimatedTabHostListener(this, tabHost));
+
+
+
+        }
+
+
     }
-}
+

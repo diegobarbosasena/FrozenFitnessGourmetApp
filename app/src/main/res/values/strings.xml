@@ -4,4 +4,5 @@
     <string name="title_activity_login">Frozen Fitness Gourmet</string>
     <string name="pendente">Pendente</string>
     <string name="historico">Historico</string>
+    <string name="title_activity_detalhe">DetalheActivity</string>
 </resources>

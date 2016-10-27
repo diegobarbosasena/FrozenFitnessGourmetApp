@@ -176,7 +176,7 @@ public class AnimatedTabHostListener implements TabHost.OnTabChangeListener
             {
                 return false;
             }
-            if (event1.getX() - event2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY)
+            if (event1.getX() - event2.getX() > SWIPE_MIN_DISTANCE || Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY)
             {
                 // Swipe right to left
                 newTab = currentTab + 1;
@@ -187,7 +187,7 @@ public class AnimatedTabHostListener implements TabHost.OnTabChangeListener
                 // Swipe left to right
                 newTab = currentTab - 1;
             }
-            if (newTab < 0 || newTab > (maxTabs - 1))
+            if (newTab < 0 && newTab > (maxTabs - 1))
             {
                 return false;
             }
