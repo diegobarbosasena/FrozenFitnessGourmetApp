@@ -5,4 +5,5 @@
     <string name="pendente">Pendente</string>
     <string name="historico">Historico</string>
     <string name="title_activity_detalhe">DetalheActivity</string>
+    <string name="title_activity_detalhes">DetalhesActivity</string>
 </resources>

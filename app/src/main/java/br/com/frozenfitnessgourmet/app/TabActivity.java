@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TabHost;
 
-import static android.R.id.tabcontent;
-import static java.security.AccessController.getContext;
+import java.util.ArrayList;
 
 /**
  * Created by 15160046 on 25/10/2016.
  */
 
-public class TabActivity extends AppCompatActivity {
+public class TabActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private TabHost tabHost;
-    private FrameLayout frameLayout;
+    private ListView listView;
 
 
     @Override
@@ -36,7 +36,7 @@ public class TabActivity extends AppCompatActivity {
         spec.setIndicator("Pendente");
         tabHost.addTab(spec);
 
-        TabHost.TabSpec spec1  = tabHost.newTabSpec("Histórico");
+        TabHost.TabSpec spec1 = tabHost.newTabSpec("Histórico");
         spec1.setContent(R.id.tab2);
         spec1.setIndicator("Histórico");
         tabHost.addTab(spec1);
@@ -44,9 +44,31 @@ public class TabActivity extends AppCompatActivity {
         tabHost.setOnTabChangedListener(new AnimatedTabHostListener(this, tabHost));
 
 
+        ArrayList<Pedido> lstpedido = new ArrayList<>();
 
-        }
+        lstpedido.add( new Pedido("","teste", "Emagrecer") );
+        lstpedido.add( new Pedido("","teste2", "Força") );
+        lstpedido.add( new Pedido("","teste3", "Massa Musculas") );
+        lstpedido.add( new Pedido("","teste4", "Ficar Gostosa") );
 
+
+        listView = (ListView) findViewById(R.id.listPendente);
+        PedidoAdapter pedidoAdapter = new PedidoAdapter(this, R.layout.pedido_list_item, lstpedido);
+        listView.setAdapter(pedidoAdapter);
+
+
+        listView.setOnItemClickListener(this);
 
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Intent intent = new Intent(this, DetalhesActivity.class);
+
+        startActivity(intent);
+
+    }
+}
+
 
