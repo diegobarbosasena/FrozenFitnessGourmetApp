@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Login"
+                android:id="@+id/edtLogin"
                 />
 
         </android.support.design.widget.TextInputLayout>
@@ -39,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Senha"
+                android:id="@+id/edtSenha"
                 />
 
         </android.support.design.widget.TextInputLayout>
