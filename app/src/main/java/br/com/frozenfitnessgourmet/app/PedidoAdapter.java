@@ -14,7 +14,8 @@ import java.util.List;
  * Created by 15160046 on 28/10/2016.
  */
 
-public class PedidoAdapter extends ArrayAdapter<Pedido> {
+public class
+PedidoAdapter extends ArrayAdapter<Pedido> {
 
     int resource;
 

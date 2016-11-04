@@ -13,6 +13,9 @@
     tools:context="br.com.frozenfitnessgourmet.app.DetalhesActivity"
     tools:showIn="@layout/activity_detalhes">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,12 +23,15 @@
 
         <include layout="@layout/logo"></include>
 
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/imgStatus"
             android:src="@drawable/hdgfsghfsd"
             />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,18 +73,17 @@
                 android:text="Emagrecer"
                 android:textSize="15dp"
                 />
-
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtPrecoD"
+                    android:gravity="right"
                     android:text="R$ 40,20"
                     android:textSize="19dp"
-                    />
+                    android:layout_weight="1" />
 
             </LinearLayout>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -128,8 +133,20 @@
                 />
         </LinearLayout>
 
-
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            >
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/btnvoltar"
+            android:text="Visualizar no mapa"
+            android:textColor="@color/Branco"
+            />
+        </LinearLayout>
     </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>

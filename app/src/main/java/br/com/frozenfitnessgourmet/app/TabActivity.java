@@ -18,8 +18,10 @@ import java.util.ArrayList;
 public class TabActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private TabHost tabHost;
-    private ListView listView;
+    private ListView listPendente;
+    private ListView listHistorico;
 
+    PedidoAdapter pedidoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,7 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
         spec1.setIndicator("Histórico");
         tabHost.addTab(spec1);
 
-        tabHost.setOnTabChangedListener(new AnimatedTabHostListener(this, tabHost));
-
+       // tabHost.setOnTabChangedListener(new AnimatedTabHostListener(this, tabHost));
 
         ArrayList<Pedido> lstpedido = new ArrayList<>();
 
@@ -51,13 +52,47 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
         lstpedido.add( new Pedido("","teste3", "Massa Musculas") );
         lstpedido.add( new Pedido("","teste4", "Ficar Gostosa") );
 
+        listHistorico = (ListView) findViewById(R.id.listHistorico);
+        listPendente = (ListView) findViewById(R.id.listPendente);
 
-        listView = (ListView) findViewById(R.id.listPendente);
-        PedidoAdapter pedidoAdapter = new PedidoAdapter(this, R.layout.pedido_list_item, lstpedido);
-        listView.setAdapter(pedidoAdapter);
+        pedidoAdapter = new PedidoAdapter(TabActivity.this, R.layout.pedido_list_item, lstpedido);
+        listPendente.setAdapter(pedidoAdapter);
 
 
-        listView.setOnItemClickListener(this);
+        listPendente.setOnItemClickListener(TabActivity.this);
+
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                if(tabId.equals("Pendente")){
+                    ArrayList<Pedido> lstpedido = new ArrayList<>();
+
+                    lstpedido.add( new Pedido("","teste", "Emagrecer") );
+                    lstpedido.add( new Pedido("","teste2", "Força") );
+                    lstpedido.add( new Pedido("","teste3", "Massa Musculas") );
+                    lstpedido.add( new Pedido("","teste4", "Ficar Gostosa") );
+
+                    pedidoAdapter.clear();
+                    pedidoAdapter.addAll(lstpedido);
+
+
+                }else{
+                    ArrayList<Pedido> lstpedido = new ArrayList<>();
+
+                    lstpedido.add( new Pedido("","historico", "Emagrecer") );
+                    lstpedido.add( new Pedido("","teste2", "Força") );
+                    lstpedido.add( new Pedido("","teste3", "Massa Musculas") );
+                    lstpedido.add( new Pedido("","teste4", "Ficar Gostosa") );
+
+
+                    PedidoAdapter pedidoAdapter = new PedidoAdapter(TabActivity.this, R.layout.pedido_list_item, lstpedido);
+                    listHistorico.setAdapter(pedidoAdapter);
+
+
+                    listHistorico.setOnItemClickListener(TabActivity.this);
+                }
+            }
+        });
 
     }
 
