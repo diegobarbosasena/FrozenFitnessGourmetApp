@@ -6,41 +6,42 @@ package br.com.frozenfitnessgourmet.app;
 
 public class Pedido {
 
-    private String fotoPedido;
-    private String nomePedido;
-    private String categoriaPedido;
+    private String imagemPrato;
+    private String nomePrato;
+    private String nomeCategoriaPrato;
 
 
     public Pedido(String fotoPedido, String nomePedido, String categoriaPedido) {
-        this.fotoPedido = fotoPedido;
-        this.nomePedido = nomePedido;
-        this.categoriaPedido = categoriaPedido;
+        this.setImagemPrato(fotoPedido);
+        this.setNomePrato(nomePedido);
+        this.setNomeCategoriaPrato(categoriaPedido);
     }
 
-    public Pedido(){}
-
-
-    public String getFotoPedido() {
-        return fotoPedido;
+    public Pedido() {
     }
 
-    public void setFotoPedido(String fotoPedido) {
-        this.fotoPedido = fotoPedido;
+
+    public String getImagemPrato() {
+        return imagemPrato;
     }
 
-    public String getNomePedido() {
-        return nomePedido;
+    public void setImagemPrato(String imagemPrato) {
+        this.imagemPrato = imagemPrato;
     }
 
-    public void setNomePedido(String nomePedido) {
-        this.nomePedido = nomePedido;
+    public String getNomePrato() {
+        return nomePrato;
     }
 
-    public String getCategoriaPedido() {
-        return categoriaPedido;
+    public void setNomePrato(String nomePrato) {
+        this.nomePrato = nomePrato;
     }
 
-    public void setCategoriaPedido(String categoriaPedido) {
-        this.categoriaPedido = categoriaPedido;
+    public String getNomeCategoriaPrato() {
+        return nomeCategoriaPrato;
+    }
+
+    public void setNomeCategoriaPrato(String nomeCategoriaPrato) {
+        this.nomeCategoriaPrato = nomeCategoriaPrato;
     }
 }

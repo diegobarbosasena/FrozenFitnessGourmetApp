@@ -14,16 +14,15 @@ import java.util.List;
  * Created by 15160046 on 28/10/2016.
  */
 
-public class
-PedidoAdapter extends ArrayAdapter<Pedido> {
+public class PedidoAdapter extends ArrayAdapter<Pedido> {
 
     int resource;
 
     public PedidoAdapter(Context context, int resource, List<Pedido> objects) {
         super(context, resource, objects);
-
         this.resource = resource;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -47,8 +46,8 @@ PedidoAdapter extends ArrayAdapter<Pedido> {
         txt_list_titulo = (TextView) v.findViewById(R.id.txtTituloP);
         txt_list_categoria = (TextView) v.findViewById(R.id.txtCategoriaP);
 
-        txt_list_titulo.setText(p.getNomePedido());
-        txt_list_categoria.setText(p.getCategoriaPedido());
+        txt_list_titulo.setText(p.getNomePrato());
+        txt_list_categoria.setText(p.getNomeCategoriaPrato());
 
         return v;
     }
