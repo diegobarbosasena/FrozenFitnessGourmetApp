@@ -93,8 +93,10 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        Intent intent = new Intent(this, DetalhesActivity.class);
 
+        Pedido p =  pedidoAdapter.getItem(position);
+        Intent intent = new Intent(this, DetalhesActivity.class);
+        intent.putExtra("pedido", p);
         startActivity(intent);
 
     }

@@ -1,14 +1,18 @@
 package br.com.frozenfitnessgourmet.app;
 
+import java.io.Serializable;
+
 /**
  * Created by 15160046 on 28/10/2016.
  */
 
-public class Pedido {
+public class Pedido implements Serializable{
 
     private String imagemPrato;
     private String nomePrato;
     private String nomeCategoriaPrato;
+    private double precoPrato;
+    private String caloria;
 
 
     public Pedido(String fotoPedido, String nomePedido, String categoriaPedido) {
@@ -44,4 +48,12 @@ public class Pedido {
     public void setNomeCategoriaPrato(String nomeCategoriaPrato) {
         this.nomeCategoriaPrato = nomeCategoriaPrato;
     }
+
+    public double getPrecoPrato() { return precoPrato; }
+
+    public void setPrecoPrato(double precoPrato) { this.precoPrato = precoPrato; }
+
+    public String getCaloria() { return caloria; }
+
+    public void setCaloria(String caloria) { this.caloria = caloria; }
 }

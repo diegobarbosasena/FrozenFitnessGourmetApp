@@ -54,7 +54,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtTituloD"
-                    android:text="Strogonoff Light"
                     android:textSize="23dp"
                     />
 
@@ -62,7 +61,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtCaloriaD"
-                    android:text="300kcal"
                     android:textSize="19dp"
                     />
 
@@ -70,7 +68,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCategoriaD"
-                android:text="Emagrecer"
                 android:textSize="15dp"
                 />
                 <TextView
@@ -78,7 +75,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtPrecoD"
                     android:gravity="right"
-                    android:text="R$ 40,20"
                     android:textSize="19dp"
                     android:layout_weight="1" />
 
