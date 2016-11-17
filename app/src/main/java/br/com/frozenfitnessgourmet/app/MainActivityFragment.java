@@ -109,9 +109,11 @@ public class MainActivityFragment extends Fragment {
             super.onPostExecute(resultado);
             progressDialog.dismiss();
 
-            if(resultado.contains("login_ok")){
-                Intent abrirInicio = new Intent(getActivity(), TabActivity.class);
-                startActivity(abrirInicio);
+            if(resultado.contains("login_cliente")){
+                Intent cliente = new Intent(getActivity(), TabActivity.class);
+                startActivity(cliente);
+            }else if(resultado.contains("login_veiculo")){
+                Toast.makeText(getContext(), "Veiculo", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(getContext(), "Usuario ou Senha incorreto", Toast.LENGTH_SHORT).show();
             }

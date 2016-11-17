@@ -5,6 +5,6 @@
     <string name="pendente">Pendente</string>
     <string name="historico">Historico</string>
     <string name="title_activity_detalhes">Detalhes do Pedido</string>
-    <string name="link">http://10.107.134.2</string>
+    <string name="link">http://10.107.145.107</string>
 
 </resources>
