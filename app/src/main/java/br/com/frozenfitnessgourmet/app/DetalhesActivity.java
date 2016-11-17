@@ -25,9 +25,10 @@ public class DetalhesActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        ImageView img_list_pedido;
+        ImageView img_list_pedido, img_status;
         TextView txt_list_titulo, txt_list_caloria, txt_list_categoria, txt_list_preco;
 
+        img_status = (ImageView) findViewById(R.id.imgStatus);
         txt_list_titulo = (TextView) findViewById(R.id.txtTituloD);
         txt_list_caloria = (TextView) findViewById(R.id.txtCaloriaD);
         txt_list_categoria = (TextView) findViewById(R.id.txtCategoriaD);
@@ -40,6 +41,20 @@ public class DetalhesActivity extends AppCompatActivity {
             txt_list_caloria.setText(p.getCaloria());
             txt_list_categoria.setText(p.getNomeCategoriaPrato());
             txt_list_preco.setText(NumberFormat.getCurrencyInstance().format(p.getPrecoPrato()));
+
+            if(p.getCodStatus() == 1){
+                img_status.setImageResource(R.drawable.img1);
+            }else if(p.getCodStatus() == 2){
+                img_status.setImageResource(R.drawable.img2);
+            }else if(p.getCodStatus() == 3){
+                img_status.setImageResource(R.drawable.img3);
+            }else if(p.getCodStatus() == 4){
+                img_status.setImageResource(R.drawable.img4);
+            }else if(p.getCodStatus() == 5){
+                img_status.setImageResource(R.drawable.img5);
+            }else if(p.getCodStatus() == 6){
+                img_status.setImageResource(R.drawable.img6);
+            }
         }
 
     }

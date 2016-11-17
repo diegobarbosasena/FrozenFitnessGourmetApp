@@ -13,6 +13,7 @@ public class Pedido implements Serializable{
     private String nomeCategoriaPrato;
     private double precoPrato;
     private String caloria;
+    private int codStatus;
 
 
     public Pedido(String fotoPedido, String nomePedido, String categoriaPedido) {
@@ -56,4 +57,12 @@ public class Pedido implements Serializable{
     public String getCaloria() { return caloria; }
 
     public void setCaloria(String caloria) { this.caloria = caloria; }
+
+    public int getCodStatus() {
+        return codStatus;
+    }
+
+    public void setCodStatus(int codStatus) {
+        this.codStatus = codStatus;
+    }
 }
