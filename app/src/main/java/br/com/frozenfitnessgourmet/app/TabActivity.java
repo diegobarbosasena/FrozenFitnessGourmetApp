@@ -63,14 +63,16 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
 
         new ObterPedidos().execute();
 
+
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
+
                 if (tabId.equals("Pendente")) {
 
                     new ObterPedidos().execute();
 
-                } else {
+                }else {
                     ArrayList<Pedido> lstpedido = new ArrayList<>();
 
                     lstpedido.add(new Pedido("", "historico", "Emagrecer"));

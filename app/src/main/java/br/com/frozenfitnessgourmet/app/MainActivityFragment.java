@@ -113,7 +113,8 @@ public class MainActivityFragment extends Fragment {
                 Intent cliente = new Intent(getActivity(), TabActivity.class);
                 startActivity(cliente);
             }else if(resultado.contains("login_veiculo")){
-                Toast.makeText(getContext(), "Veiculo", Toast.LENGTH_SHORT).show();
+                Intent veiculo = new Intent(getActivity(), VeiculoActivity.class);
+                startActivity(veiculo);
             }else{
                 Toast.makeText(getContext(), "Usuario ou Senha incorreto", Toast.LENGTH_SHORT).show();
             }
