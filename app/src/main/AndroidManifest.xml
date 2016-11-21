@@ -33,7 +33,11 @@
             android:name=".DetalhesActivity"
             android:label="@string/title_activity_detalhes"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".VeiculoActivity"></activity>
+        <activity android:name=".VeiculoActivity" />
+        <activity
+            android:name=".DetalhesEntregaActivity"
+            android:label="@string/title_activity_detalhes_entrega"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

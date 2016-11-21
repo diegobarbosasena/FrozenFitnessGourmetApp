@@ -1,12 +1,13 @@
 package br.com.frozenfitnessgourmet.app;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by 15160046 on 18/11/2016.
  */
 
-public class Entregar {
+public class Entregar implements Serializable{
     private String nomePrato;
     private String nomeCliente;
     private String logradouro;

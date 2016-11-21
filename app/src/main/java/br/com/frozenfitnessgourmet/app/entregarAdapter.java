@@ -45,7 +45,7 @@ public class EntregarAdapter extends ArrayAdapter<Entregar>{
 
         img_entregar =(ImageView)v.findViewById(R.id.imgPratoE);
         txt_entregar_titulo = (TextView) v.findViewById(R.id.txtTituloE);
-        txt_entregar_cliente = (TextView) v.findViewById(R.id.txtCidadeE);
+        txt_entregar_cliente = (TextView) v.findViewById(R.id.txtClienteE);
         txt_entregar_rua = (TextView) v.findViewById(R.id.txtRuaE);
         txt_entregar_cidade = (TextView) v.findViewById(R.id.txtCidadeE);
 
