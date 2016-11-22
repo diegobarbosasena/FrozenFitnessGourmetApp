@@ -113,7 +113,7 @@ public class MainActivityFragment extends Fragment {
             progressDialog.dismiss();
 
 
-            Log.d("login", resultado);
+            //Log.d("login", resultado);
 
            LoginUsuario login = new Gson().fromJson(resultado, LoginUsuario.class);
 

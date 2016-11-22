@@ -74,6 +74,61 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Recebido"
+                        android:id="@+id/edtNomeRecebido"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="CPF"
+                        android:id="@+id/edtCPFRecebido"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txtData"
+                    android:text="22/11/2016"
+                    android:textSize="17dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                >
+                <Button
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:background="@color/colorPrimary"
+                    android:id="@+id/btnvoltar"
+                    android:text="Salvar"
+                    android:textColor="@color/Branco"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
