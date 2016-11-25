@@ -9,6 +9,19 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
 
+    public static boolean fechar=false;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(fechar){
+            fechar = false;
+            finish();
+        }
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

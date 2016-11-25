@@ -56,24 +56,27 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
         listPendente = (ListView) findViewById(R.id.listPendente);
 
         pedidoAdapter = new PedidoAdapter(this, R.layout.pedido_list_item, lstpedido);
-        listPendente.setAdapter(pedidoAdapter);
 
 
         listPendente.setOnItemClickListener(TabActivity.this);
 
-        new ObterPedidos().execute();
+
+
+        new ObterPedidos(false).execute("obtem_pendente.php?codUsuario="+ Sessao.usuarioLogado.getCodUsuario());
 
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
 
+                Log.d("setOnTabChangedListener", tabId);
+
                 if (tabId.equals("Pendente")) {
 
-                    new ObterPedidos().execute();
+                    new ObterPedidos(false).execute("obtem_pendente.php?codUsuario="+ Sessao.usuarioLogado.getCodUsuario());
 
                 }else {
-                    ArrayList<Pedido> lstpedido = new ArrayList<>();
+                   /* ArrayList<Pedido> lstpedido = new ArrayList<>();
 
                     lstpedido.add(new Pedido("", "historico", "Emagrecer"));
                     lstpedido.add(new Pedido("", "teste2", "Força"));
@@ -85,7 +88,10 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
                     listHistorico.setAdapter(pedidoAdapter);
 
 
-                    listHistorico.setOnItemClickListener(TabActivity.this);
+                    listHistorico.setOnItemClickListener(TabActivity.this);*/
+
+
+                    new ObterPedidos(true).execute("obtem_historico.php?codUsuario="+ Sessao.usuarioLogado.getCodUsuario());
                 }
             }
         });
@@ -103,12 +109,18 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
 
     }
 
-    private class ObterPedidos extends AsyncTask<Void, Void, String> {
+    private class ObterPedidos extends AsyncTask<String, Void, String> {
+
+        boolean historico =false;
+
+        public ObterPedidos(boolean historico) {
+            this.historico = historico;
+        }
 
         @Override
-        protected String doInBackground(Void... params) {
+        protected String doInBackground(String... params) {
 
-            String link = getString(R.string.link)+"/API/obtem_pendente.php";
+            String link = getString(R.string.link)+"/API/" + params[0];
 
             boolean acessarInternet = true;
 
@@ -134,8 +146,21 @@ public class TabActivity extends AppCompatActivity implements AdapterView.OnItem
                 pedidoAdapter.clear();
                 pedidoAdapter.addAll(pedidos);
 
+                if(historico){
+                    listHistorico.setAdapter(pedidoAdapter);
+                }else{
+                    listPendente.setAdapter(pedidoAdapter);
+                }
+
+
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MainActivity.fechar=true;
     }
 }
 
