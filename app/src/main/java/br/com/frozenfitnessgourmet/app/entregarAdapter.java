@@ -15,7 +15,7 @@ import java.util.List;
  * Created by 15160046 on 18/11/2016.
  */
 
-public class EntregarAdapter extends ArrayAdapter<Entregar>{
+class EntregarAdapter extends ArrayAdapter<Entregar>{
 
     int resource;
 

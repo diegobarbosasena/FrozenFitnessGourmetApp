@@ -43,7 +43,7 @@ public class VeiculoActivity extends AppCompatActivity implements AdapterView.On
 
 
         Entregar e =  entregarAdapter.getItem(position);
-        Intent intent = new Intent(this, DetalhesActivity.class);
+        Intent intent = new Intent(this, DetalhesEntregaActivity.class);
         intent.putExtra("entregar", e);
         startActivity(intent);
 
