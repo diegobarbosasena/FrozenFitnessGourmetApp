@@ -42,12 +42,17 @@ public class PedidoAdapter extends ArrayAdapter<Pedido> {
         ImageView img_list_pedido;
         TextView txt_list_titulo,txt_list_categoria;
 
-        img_list_pedido =(ImageView)v.findViewById(R.id.imgPratoP);
+        img_list_pedido =(ImageView) v.findViewById(R.id.imgPratoP);
         txt_list_titulo = (TextView) v.findViewById(R.id.txtTituloP);
         txt_list_categoria = (TextView) v.findViewById(R.id.txtCategoriaP);
 
+
+
         txt_list_titulo.setText(p.getNomePrato());
         txt_list_categoria.setText(p.getNomeCategoriaPrato());
+
+        String img_pedido = "hht://192.168.1.24//FrozenFitnessGourmetPHP/" + p.getImagemPrato();
+        new DownloadImageTask(img_list_pedido).execute(img_pedido);
 
         return v;
     }
