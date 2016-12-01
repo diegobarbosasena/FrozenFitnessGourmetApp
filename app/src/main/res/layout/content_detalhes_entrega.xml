@@ -24,14 +24,6 @@
 
             <include layout="@layout/logo"></include>
 
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/lstDetalheEntregar"
-                >
-
-            </ListView>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,6 +61,21 @@
                     android:textSize="17dp"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lstDetalheEntregar"
+                >
+
+            </ListView>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
