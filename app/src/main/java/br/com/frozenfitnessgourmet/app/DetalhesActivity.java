@@ -8,6 +8,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -77,13 +78,12 @@ public class DetalhesActivity extends AppCompatActivity {
 
         }
 
-        /*btnMapa.setOnClickListener(new View.OnClickListener() {
+        btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent veiculo = new Intent(context,MapsActivity.class);
-                startActivity(veiculo);
+                startActivity(new Intent(context, MapsActivity.class));
             }
-        });*/
+        });
 
     }
 
