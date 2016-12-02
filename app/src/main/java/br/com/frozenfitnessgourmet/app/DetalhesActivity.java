@@ -33,8 +33,11 @@ public class DetalhesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalhes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        context = this;
 
         final Intent intent = getIntent();
+
+        btnMapa = (Button) findViewById(R.id.btnmapa);
 
 
         ImageView img_list_pedido, img_status;
@@ -57,7 +60,7 @@ public class DetalhesActivity extends AppCompatActivity {
             txt_list_categoria.setText(p.getNomeCategoriaPrato());
             txt_list_preco.setText(NumberFormat.getCurrencyInstance().format(p.getPrecoPrato()));
 
-            String img_pedido = "http://10.107.134.2/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
+            String img_pedido = context.getString(R.string.link)+"/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
             Log.d("imagem", img_pedido);
             Picasso.with(context).load(img_pedido).into(img_list_pedido);
             //new DownlogetContext()adImageTask(img_list_pedido).execute(img_pedido);

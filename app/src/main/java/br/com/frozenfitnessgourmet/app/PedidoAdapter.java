@@ -20,10 +20,12 @@ import java.util.List;
 public class PedidoAdapter extends ArrayAdapter<Pedido> {
 
     int resource;
+    Context context;
 
     public PedidoAdapter(Context context, int resource, List<Pedido> objects) {
         super(context, resource, objects);
         this.resource = resource;
+        this.context = context;
     }
 
 
@@ -54,7 +56,7 @@ public class PedidoAdapter extends ArrayAdapter<Pedido> {
         txt_list_titulo.setText(p.getNomePrato());
         txt_list_categoria.setText(p.getNomeCategoriaPrato());
 
-        String img_pedido = "http://10.107.134.2/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
+        String img_pedido = context.getString(R.string.link)+"/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
         Log.d("imagem", img_pedido);
 
         Picasso.with(getContext()).load(img_pedido).into(img_list_pedido);
