@@ -7,17 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
-
-import static android.widget.Toast.makeText;
-import static java.security.AccessController.getContext;
 
 
 public class DetalhesActivity extends AppCompatActivity {
@@ -43,6 +40,7 @@ public class DetalhesActivity extends AppCompatActivity {
         TextView txt_list_titulo, txt_list_caloria, txt_list_categoria, txt_list_preco;
 
         img_status = (ImageView) findViewById(R.id.imgStatus);
+        img_list_pedido = (ImageView) findViewById(R.id.imgDetalhe);
         txt_list_titulo = (TextView) findViewById(R.id.txtTituloD);
         txt_list_caloria = (TextView) findViewById(R.id.txtCaloriaD);
         txt_list_categoria = (TextView) findViewById(R.id.txtCategoriaD);
@@ -51,10 +49,17 @@ public class DetalhesActivity extends AppCompatActivity {
         if(intent != null){
             Pedido p = (Pedido)intent.getSerializableExtra("pedido");
 
+
+
             txt_list_titulo.setText(p.getNomePrato());
             txt_list_caloria.setText(p.getCaloria());
             txt_list_categoria.setText(p.getNomeCategoriaPrato());
             txt_list_preco.setText(NumberFormat.getCurrencyInstance().format(p.getPrecoPrato()));
+
+            String img_pedido = "http://10.107.134.2/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
+            Log.d("imagem", img_pedido);
+            Picasso.with(context).load(img_pedido).into(img_list_pedido);
+            //new DownlogetContext()adImageTask(img_list_pedido).execute(img_pedido);
 
             if(p.getCodStatus() == 1){
                 img_status.setImageResource(R.drawable.img1);
@@ -72,13 +77,13 @@ public class DetalhesActivity extends AppCompatActivity {
 
         }
 
-        btnMapa.setOnClickListener(new View.OnClickListener() {
+        /*btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent veiculo = new Intent(context,MapsActivity.class);
                 startActivity(veiculo);
             }
-        });
+        });*/
 
     }
 

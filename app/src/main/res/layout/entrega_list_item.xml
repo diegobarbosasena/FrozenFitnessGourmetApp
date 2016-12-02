@@ -19,21 +19,21 @@
                 android:layout_height="wrap_content"
 
                 android:id="@+id/txtClienteE"
-                android:text="Amanda"
+
                 android:textSize="17dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtRuaE"
-                android:text="Rua Regiane, 150"
+
                 android:textSize="15dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCidadeE"
-                android:text="Jandira - SP"
+
                 android:textSize="15dp"
                 />
 

@@ -1,12 +1,15 @@
 package br.com.frozenfitnessgourmet.app;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -51,8 +54,11 @@ public class PedidoAdapter extends ArrayAdapter<Pedido> {
         txt_list_titulo.setText(p.getNomePrato());
         txt_list_categoria.setText(p.getNomeCategoriaPrato());
 
-        String img_pedido = "hht://192.168.1.24//FrozenFitnessGourmetPHP/" + p.getImagemPrato();
-        new DownloadImageTask(img_list_pedido).execute(img_pedido);
+        String img_pedido = "http://10.107.134.2/FrozenFitnessGourmetPHP/" + p.getImagemPrato();
+        Log.d("imagem", img_pedido);
+
+        Picasso.with(getContext()).load(img_pedido).into(img_list_pedido);
+        //new DownloadImageTask(img_list_pedido).execute(img_pedido);
 
         return v;
     }

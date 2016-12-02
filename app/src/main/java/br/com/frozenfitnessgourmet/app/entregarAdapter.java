@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -18,6 +17,7 @@ import java.util.List;
 class EntregarAdapter extends ArrayAdapter<Entregar>{
 
     int resource;
+    Context context;
 
 
     public EntregarAdapter(Context context, int resource, List<Entregar> objects) {
@@ -40,15 +40,17 @@ class EntregarAdapter extends ArrayAdapter<Entregar>{
         }
         Entregar e = getItem(position);
 
-        ImageView img_entregar;
-        TextView txt_entregar_titulo,txt_entregar_cliente, txt_entregar_rua, txt_entregar_cidade;
 
-        img_entregar =(ImageView)v.findViewById(R.id.imgPratoE);
-        txt_entregar_titulo = (TextView) v.findViewById(R.id.txtTituloE);
-        txt_entregar_cliente = (TextView) v.findViewById(R.id.txtClienteE);
+        TextView txt_entregar_nome, txt_entregar_rua, txt_entregar_cidade;
+
+
+        txt_entregar_nome = (TextView) v.findViewById(R.id.txtClienteE);
         txt_entregar_rua = (TextView) v.findViewById(R.id.txtRuaE);
-        txt_entregar_cidade = (TextView) v.findViewById(R.id.txtCidadeE);
+        txt_entregar_cidade =  (TextView) v.findViewById(R.id.txtCidadeE);
 
+            txt_entregar_nome.setText(e.getNomeCliente());
+            txt_entregar_rua.setText(e.getLogradouro() + " - "  + e.getNumero());
+            txt_entregar_cidade.setText(e.getNomeCidade() + " - " + e.getUf());
 
 
         return v;
